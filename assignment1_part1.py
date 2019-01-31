@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-"""IS-211 Week 1 Assignment"""
+"""IS-211 Week 1 Assignment Part 1"""
 
 
 class ListDivideException(Exception):
@@ -19,11 +19,11 @@ def listDivide(numbers, divide=2):
 
     Returns:
         int: The return value should be the number of values successfully
-            divisible by the divide parameter. 
+            divisible by the divide parameter.
     """
     counter = 0
-    for n in numbers:
-        if n % divide == 0:
+    for num in numbers:
+        if num % divide == 0:
             counter += 1
     return counter
 
@@ -37,23 +37,23 @@ def testListDivide(test=None):
 
     Returns:
         AttributeError: If listDivide() function breaks, exception is raised."""
-    if test==None:
-         test = [[1,2,3,4,5],
-                 [2,4,6,8,10],
-                 [30,54,63,98,100],
-                 []]
-         try:
-             case1 = listDivide(test[0])
-             case2 = listDivide(test[1])
-             case3 = listDivide(test[2],10)
-             case4 = listDivide(test[3])
-             case5 = listDivide(test[1],1)
-         except Exception as e:
-             raise ListDivideException("One of the tests have failed.")
+    if test is None:
+        test = [[1, 2, 3, 4, 5],
+                [2, 4, 6, 8, 10],
+                [30, 54, 63, 98, 100],
+                []]
+        try:
+            listDivide(test[0])
+            listDivide(test[1])
+            listDivide(test[2], 10)
+            listDivide(test[3])
+            listDivide(test[1], 1)
+        except Exception:
+            raise ListDivideException("One of the tests have failed.")
     else:
         try:
-            customtest = listDivide(test)
-        except Exception as e:
+            listDivide(test)
+        except Exception:
             raise ListDivideException("One of the tests have failed.")
     return
 
