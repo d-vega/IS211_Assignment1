@@ -41,14 +41,13 @@ def testListDivide(test=None):
          test = [[1,2,3,4,5],
                  [2,4,6,8,10],
                  [30,54,63,98,100],
-                 [],
-                 [1,2,3,4,5]]
+                 []]
          try:
              case1 = listDivide(test[0])
              case2 = listDivide(test[1])
              case3 = listDivide(test[2],10)
              case4 = listDivide(test[3])
-             case5 = listDivide(test[4],1)      
+             case5 = listDivide(test[1],1)
          except Exception as e:
              raise ListDivideException("One of the tests have failed.")
     else:
